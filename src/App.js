@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import List from "./components/List";
+import Detail from "./components/Detail";
+import Create from "./components/Create";
+import Update from "./components/Update";
+import Search from "./components/Search";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import NavBarMenu from './components/NavBarMenu';
+import Logout from "./components/Logout";
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <NavBarMenu/>
+          <Route path="/list">
+            <List />
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+          <Route path="/logout">
+            <Logout />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/detail">
+            <Detail />
+          </Route>
+          <Route
+            render={(props) => <Update {...props} />}
+            path="/update/:id"
+          ></Route>
+          {/*  */}
+          <Route render={(props) => <Login {...props} />} path="/login"></Route>
+          {/*  */}
+          <Route path="/" exact>
+            <Home />
+          </Route>
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;

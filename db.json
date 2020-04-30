@@ -1,0 +1,31 @@
+{
+  "login": [
+    {
+      "name": "navi",
+      "password": "123"
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "burger king",
+      "email": "king@gmail.com",
+      "address": "rajpura",
+      "rating": "4.3",
+      "id": 1
+    },
+    {
+      "name": "Dominous",
+      "email": "dominous@gmail.com",
+      "address": "rajpura",
+      "rating": "4.4",
+      "id": 2
+    },
+    {
+      "name": "KFC",
+      "email": "kfc@gmail.com",
+      "address": "Ludhiana",
+      "rating": "4.5",
+      "id": 3
+    }
+  ]
+}
